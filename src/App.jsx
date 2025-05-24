@@ -92,41 +92,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 min-h-screen flex items-center"
-      >
-        <div className="container mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                Transform Your Body,
-                <span className="text-amber-600 block">
-                  Transform Your Life
-                </span>
-              </h2>
-              <p className="text-xl mb-8 text-gray-600 max-w-2xl">
-                Professional personal training in Miami. Get the results you've
-                always wanted with customized workout plans and expert guidance.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Start Your Journey
-                </button>
-                <button className="border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white font-semibold py-4 px-8 rounded-full transition-all duration-300">
-                  Free Consultation
-                </button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-amber-500/10 rounded-3xl p-8 backdrop-blur-sm">
-                <Dumbbell className="w-64 h-64 text-amber-500 mx-auto" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero section will be built separately */}
 
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
@@ -315,88 +281,7 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Dumbbell className="w-6 h-6 text-amber-500" />
-                <h3 className="text-xl font-bold">Miami Personal Training</h3>
-              </div>
-              <p className="text-gray-300">
-                Transform your body and life with professional personal training
-                in Miami.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a
-                    href="#home"
-                    className="hover:text-amber-500 transition duration-300"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#about"
-                    className="hover:text-amber-500 transition duration-300"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-amber-500 transition duration-300"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="hover:text-amber-500 transition duration-300"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>Personal Training</li>
-                <li>Group Training</li>
-                <li>Nutrition Coaching</li>
-                <li>Strength Training</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Contact Info</h4>
-              <div className="space-y-2 text-gray-300">
-                <p>877.392.4370</p>
-                <p>info@miamipersonaltraining.com</p>
-                <p>
-                  123 Fitness Street
-                  <br />
-                  Miami, FL 33101
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2025 Miami Personal Training. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      {/* Footer component will be added by your brother */}
     </div>
   );
 }
