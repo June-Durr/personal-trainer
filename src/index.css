@@ -1,19 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    font-family: "Inter", sans-serif;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-secondary hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300;
-  }
-
-  .btn-secondary {
-    @apply bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300;
-  }
+body {
+  font-family: Arial, sans-serif;
 }

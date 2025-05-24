@@ -13,7 +13,7 @@ import {
   Users,
   Award,
 } from "lucide-react";
-import ContactForm from "./components/ContactForm";
+import Contact from "./components/ContactForm";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -363,7 +363,7 @@ function App() {
             </div>
 
             {/* Contact Form */}
-            <ContactForm />
+            <Contact />
           </div>
         </div>
       </section>
