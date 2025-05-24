@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import {
-  Menu,
-  X,
   Phone,
   Mail,
   MapPin,
@@ -13,13 +11,10 @@ import {
   Users,
   Award,
 } from "lucide-react";
-import Contact from "./components/ContactForm";
+import Header from "./components/Header";
+import ContactForm from "./components/ContactForm";
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   const services = [
     {
       title: "Personal Training",
@@ -65,124 +60,68 @@ function App() {
     },
   ];
 
+  useEffect(() => {
+    // SEO Meta tags
+    document.title =
+      "Miami Personal Training | Professional Fitness Coaching in Miami, FL";
+
+    const metaDescription =
+      document.querySelector('meta[name="description"]') ||
+      document.createElement("meta");
+    metaDescription.name = "description";
+    metaDescription.content =
+      "Transform your body with Miami's premier personal training services. Customized workout plans, nutrition coaching, and expert guidance. Call 877-392-4370 for a free consultation.";
+    if (!document.querySelector('meta[name="description"]')) {
+      document.head.appendChild(metaDescription);
+    }
+
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    metaKeywords.content =
+      "Miami personal trainer, fitness coaching Miami, weight loss Miami, strength training, nutrition coaching, personal training near me";
+    document.head.appendChild(metaKeywords);
+
+    return () => {
+      if (document.head.contains(metaKeywords)) {
+        document.head.removeChild(metaKeywords);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-primary text-white shadow-lg fixed w-full top-0 z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-2">
-              <Dumbbell className="w-8 h-8 text-secondary" />
-              <h1 className="text-2xl font-bold">Miami Personal Training</h1>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <a
-                href="#home"
-                className="hover:text-secondary transition duration-300"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="hover:text-secondary transition duration-300"
-              >
-                About
-              </a>
-              <a
-                href="#services"
-                className="hover:text-secondary transition duration-300"
-              >
-                Services
-              </a>
-              <a
-                href="#testimonials"
-                className="hover:text-secondary transition duration-300"
-              >
-                Testimonials
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-secondary transition duration-300"
-              >
-                Contact
-              </a>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button className="md:hidden text-white" onClick={toggleMenu}>
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <nav className="md:hidden pb-4">
-              <div className="flex flex-col space-y-2">
-                <a
-                  href="#home"
-                  className="hover:text-secondary transition duration-300 py-2"
-                >
-                  Home
-                </a>
-                <a
-                  href="#about"
-                  className="hover:text-secondary transition duration-300 py-2"
-                >
-                  About
-                </a>
-                <a
-                  href="#services"
-                  className="hover:text-secondary transition duration-300 py-2"
-                >
-                  Services
-                </a>
-                <a
-                  href="#testimonials"
-                  className="hover:text-secondary transition duration-300 py-2"
-                >
-                  Testimonials
-                </a>
-                <a
-                  href="#contact"
-                  className="hover:text-secondary transition duration-300 py-2"
-                >
-                  Contact
-                </a>
-              </div>
-            </nav>
-          )}
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section
         id="home"
-        className="pt-20 bg-gradient-to-br from-primary to-gray-800 text-white"
+        className="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 min-h-screen flex items-center"
       >
         <div className="container mx-auto px-4 py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-5xl font-bold mb-6">
-                Transform Your Body, Transform Your Life
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                Transform Your Body,
+                <span className="text-amber-600 block">
+                  Transform Your Life
+                </span>
               </h2>
-              <p className="text-xl mb-8 text-gray-300">
+              <p className="text-xl mb-8 text-gray-600 max-w-2xl">
                 Professional personal training in Miami. Get the results you've
                 always wanted with customized workout plans and expert guidance.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-primary">Start Your Journey</button>
-                <button className="btn-secondary">Free Consultation</button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Start Your Journey
+                </button>
+                <button className="border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white font-semibold py-4 px-8 rounded-full transition-all duration-300">
+                  Free Consultation
+                </button>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-secondary/20 rounded-full p-8 backdrop-blur-sm">
-                <Dumbbell className="w-64 h-64 text-secondary mx-auto" />
+              <div className="bg-amber-500/10 rounded-3xl p-8 backdrop-blur-sm">
+                <Dumbbell className="w-64 h-64 text-amber-500 mx-auto" />
               </div>
             </div>
           </div>
@@ -190,10 +129,10 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-50">
+      <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               About Miami Personal Training
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -204,11 +143,11 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-secondary rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+            <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-amber-500 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Certified Trainers
               </h3>
               <p className="text-gray-600">
@@ -217,11 +156,11 @@ function App() {
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="bg-secondary rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+            <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-amber-500 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Personalized Plans
               </h3>
               <p className="text-gray-600">
@@ -230,11 +169,11 @@ function App() {
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="bg-secondary rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+            <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-amber-500 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Community Support
               </h3>
               <p className="text-gray-600">
@@ -247,10 +186,10 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -263,17 +202,20 @@ function App() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-secondary"
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-amber-500 group hover:transform hover:scale-105"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="text-secondary">{service.icon}</div>
+                  <div className="text-amber-500 group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-primary mb-3">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       {service.title}
                     </h3>
                     <p className="text-gray-600 mb-4">{service.description}</p>
-                    <button className="text-secondary font-semibold flex items-center hover:text-yellow-500 transition duration-300">
-                      Learn More <ChevronRight className="w-4 h-4 ml-1" />
+                    <button className="text-amber-600 font-semibold flex items-center hover:text-amber-700 transition duration-300 group">
+                      Learn More
+                      <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                     </button>
                   </div>
                 </div>
@@ -284,10 +226,10 @@ function App() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gray-50">
+      <section id="testimonials" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -298,19 +240,22 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+              <div
+                key={index}
+                className="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:scale-105"
+              >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 text-secondary fill-current"
+                      className="w-5 h-5 text-amber-500 fill-current"
                     />
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">
                   "{testimonial.text}"
                 </p>
-                <p className="font-bold text-primary">- {testimonial.name}</p>
+                <p className="font-bold text-gray-900">- {testimonial.name}</p>
               </div>
             ))}
           </div>
@@ -318,10 +263,10 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Get Started Today
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -333,28 +278,30 @@ function App() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Contact Information
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-6 h-6 text-secondary" />
-                  <span className="text-gray-700">(305) 555-0123</span>
+                  <Phone className="w-6 h-6 text-amber-500" />
+                  <span className="text-gray-700 font-medium">
+                    877.392.4370
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-6 h-6 text-secondary" />
+                  <Mail className="w-6 h-6 text-amber-500" />
                   <span className="text-gray-700">
                     info@miamipersonaltraining.com
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-6 h-6 text-secondary" />
+                  <MapPin className="w-6 h-6 text-amber-500" />
                   <span className="text-gray-700">
                     123 Fitness Street, Miami, FL 33101
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock className="w-6 h-6 text-secondary" />
+                  <Clock className="w-6 h-6 text-amber-500" />
                   <span className="text-gray-700">
                     Mon-Fri: 6AM-10PM, Sat-Sun: 8AM-8PM
                   </span>
@@ -363,18 +310,18 @@ function App() {
             </div>
 
             {/* Contact Form */}
-            <Contact />
+            <ContactForm />
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-12">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Dumbbell className="w-6 h-6 text-secondary" />
+                <Dumbbell className="w-6 h-6 text-amber-500" />
                 <h3 className="text-xl font-bold">Miami Personal Training</h3>
               </div>
               <p className="text-gray-300">
@@ -389,7 +336,7 @@ function App() {
                 <li>
                   <a
                     href="#home"
-                    className="hover:text-secondary transition duration-300"
+                    className="hover:text-amber-500 transition duration-300"
                   >
                     Home
                   </a>
@@ -397,7 +344,7 @@ function App() {
                 <li>
                   <a
                     href="#about"
-                    className="hover:text-secondary transition duration-300"
+                    className="hover:text-amber-500 transition duration-300"
                   >
                     About
                   </a>
@@ -405,7 +352,7 @@ function App() {
                 <li>
                   <a
                     href="#services"
-                    className="hover:text-secondary transition duration-300"
+                    className="hover:text-amber-500 transition duration-300"
                   >
                     Services
                   </a>
@@ -413,7 +360,7 @@ function App() {
                 <li>
                   <a
                     href="#contact"
-                    className="hover:text-secondary transition duration-300"
+                    className="hover:text-amber-500 transition duration-300"
                   >
                     Contact
                   </a>
@@ -434,7 +381,7 @@ function App() {
             <div>
               <h4 className="text-lg font-bold mb-4">Contact Info</h4>
               <div className="space-y-2 text-gray-300">
-                <p>(305) 555-0123</p>
+                <p>877.392.4370</p>
                 <p>info@miamipersonaltraining.com</p>
                 <p>
                   123 Fitness Street
