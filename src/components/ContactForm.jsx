@@ -33,7 +33,6 @@ const ContactForm = () => {
     setIsLoading(true);
     setStatus({ type: "", message: "" });
 
-    // Simulate form submission for now
     setTimeout(() => {
       setStatus({
         type: "success",
@@ -57,7 +56,7 @@ const ContactForm = () => {
       className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-6xl">
-        {/* Single Header */}
+        {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Get Started Today
@@ -68,28 +67,27 @@ const ContactForm = () => {
           </p>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
+          {/* Contact Information - Ultra Sleek */}
+          <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-2xl font-light text-gray-900 mb-8 tracking-wide">
                 Contact Information
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <a
                   href="tel:877-392-4370"
-                  className="group flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-yellow-200 transition-all duration-300"
+                  className="group flex items-center space-x-4 hover:bg-yellow-50/30 py-2 px-3 rounded-md transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="w-5 h-5 text-white" />
+                  <div className="w-8 h-8 bg-yellow-400/20 border border-yellow-400/30 rounded-full flex items-center justify-center group-hover:bg-yellow-400/30 transition-colors duration-300">
+                    <Phone className="w-3.5 h-3.5 text-yellow-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                      Phone
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-0.5">
+                      PHONE
                     </p>
-                    <p className="text-lg font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors">
+                    <p className="text-base font-medium text-gray-900 group-hover:text-yellow-600 transition-colors">
                       877.392.4370
                     </p>
                   </div>
@@ -97,30 +95,30 @@ const ContactForm = () => {
 
                 <a
                   href="mailto:info@miamipersonaltraining.com"
-                  className="group flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-yellow-200 transition-all duration-300"
+                  className="group flex items-center space-x-4 hover:bg-yellow-50/30 py-2 px-3 rounded-md transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-5 h-5 text-white" />
+                  <div className="w-8 h-8 bg-yellow-400/20 border border-yellow-400/30 rounded-full flex items-center justify-center group-hover:bg-yellow-400/30 transition-colors duration-300">
+                    <Mail className="w-3.5 h-3.5 text-yellow-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                      Email
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-0.5">
+                      EMAIL
                     </p>
-                    <p className="text-lg font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors break-all">
+                    <p className="text-base font-medium text-gray-900 group-hover:text-yellow-600 transition-colors">
                       info@miamipersonaltraining.com
                     </p>
                   </div>
                 </a>
 
-                <div className="group flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-yellow-200 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <MapPin className="w-5 h-5 text-white" />
+                <div className="group flex items-center space-x-4 hover:bg-yellow-50/30 py-2 px-3 rounded-md transition-all duration-300">
+                  <div className="w-8 h-8 bg-yellow-400/20 border border-yellow-400/30 rounded-full flex items-center justify-center">
+                    <MapPin className="w-3.5 h-3.5 text-yellow-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                      Location
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-0.5">
+                      LOCATION
                     </p>
-                    <p className="text-lg font-semibold text-gray-900">
+                    <p className="text-base font-medium text-gray-900">
                       123 Fitness Street
                       <br />
                       Miami, FL 33101
@@ -128,15 +126,15 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                <div className="group flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-yellow-200 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <Clock className="w-5 h-5 text-white" />
+                <div className="group flex items-center space-x-4 hover:bg-yellow-50/30 py-2 px-3 rounded-md transition-all duration-300">
+                  <div className="w-8 h-8 bg-yellow-400/20 border border-yellow-400/30 rounded-full flex items-center justify-center">
+                    <Clock className="w-3.5 h-3.5 text-yellow-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                      Hours
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-0.5">
+                      HOURS
                     </p>
-                    <p className="text-lg font-semibold text-gray-900">
+                    <p className="text-base font-medium text-gray-900">
                       Mon-Fri: 6AM-10PM
                       <br />
                       Sat-Sun: 8AM-8PM
@@ -146,14 +144,16 @@ const ContactForm = () => {
               </div>
             </div>
 
-            {/* CTA Card */}
-            <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl p-6 text-white">
-              <h4 className="text-xl font-bold mb-3">Ready to Start?</h4>
-              <p className="text-yellow-50 mb-4">
+            {/* Ultra Minimal CTA */}
+            <div className="bg-yellow-400/10 border border-yellow-400/20 rounded-lg p-5 mt-8">
+              <h4 className="text-lg font-medium mb-2 text-gray-900">
+                Ready to Start?
+              </h4>
+              <p className="text-gray-600 text-sm mb-4 font-light">
                 Book your free consultation today and take the first step
                 towards your transformation.
               </p>
-              <button className="bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button className="bg-yellow-400/20 border border-yellow-400/30 text-yellow-700 font-medium px-4 py-2 rounded-full hover:bg-yellow-400/30 hover:border-yellow-400/40 transition-all duration-300 text-sm">
                 Schedule Now
               </button>
             </div>

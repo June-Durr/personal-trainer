@@ -241,43 +241,8 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Contact Information
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-6 h-6 text-amber-500" />
-                  <span className="text-gray-700 font-medium">
-                    877.392.4370
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-6 h-6 text-amber-500" />
-                  <span className="text-gray-700">
-                    info@miamipersonaltraining.com
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="w-6 h-6 text-amber-500" />
-                  <span className="text-gray-700">
-                    123 Fitness Street, Miami, FL 33101
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="w-6 h-6 text-amber-500" />
-                  <span className="text-gray-700">
-                    Mon-Fri: 6AM-10PM, Sat-Sun: 8AM-8PM
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <ContactForm />
-          </div>
+          {/* Contact Form */}
+          <ContactForm />
         </div>
       </section>
 
