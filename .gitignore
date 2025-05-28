@@ -7,18 +7,36 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node modules
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Environment variables
 *.local
+.env
+.env.local
+.env.*.local
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
+
+# OS-specific files
 .DS_Store
+Thumbs.db
+
+# IDE/editor settings (specific to JetBrains and VS Code)
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Package lock files (optional - if you prefer not to track them)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
