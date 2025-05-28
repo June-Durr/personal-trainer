@@ -13,6 +13,10 @@ import {
 } from "lucide-react";
 import Header from "./components/Header";
 import ContactForm from "./components/ContactForm";
+import Hero from "./components/Hero"
+import Footer from "./components/Footer"
+import Gallery from "./components/Gallery"
+
 
 function App() {
   const services = [
@@ -93,6 +97,7 @@ function App() {
       <Header />
 
       {/* Hero section will be built separately */}
+      <Hero />
 
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
@@ -229,6 +234,8 @@ function App() {
       </section>
 
       {/* Contact Section */}
+      {/* <Gallery /> */}
+      <Gallery />
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -247,6 +254,7 @@ function App() {
       </section>
 
       {/* Footer component will be added by your brother */}
+      <Footer />
     </div>
   );
 }
